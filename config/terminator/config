@@ -1,0 +1,23 @@
+[global_config]
+  enabled_plugins = CustomCommandsMenu,
+  dbus = True
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#2e3436:#ea3a3a:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#f17171:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    cursor_shape = underline
+    use_system_font = False
+    foreground_color = "#d8d4d4"
+    font = DejaVu Sans Mono 11
+    background_color = "#212121"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

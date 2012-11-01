@@ -1,0 +1,5 @@
+defaults.pcm.card 0
+defaults.pcm.device 4
+defaults.ctl.card 0
+
+#options snd-NAME-OF-MODULE ac97_quirk=1

@@ -1,0 +1,13 @@
+To install (on *nix systems, including OS X):
+$ cd
+$ mkdir texmf && cd texmf
+$ mkdir tex && cd tex
+$ mkdir latex && cd latex
+$ mkdir labtex
+
+Add the labtex.sty file in this new folder and, in your .tex document, add
+
+\usepackage{labtex}
+
+after you include all other packages. I *think* the dependencies are only
+amsmath.sty and amsfonts.sty. Can someone please check?

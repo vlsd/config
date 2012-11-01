@@ -1,0 +1,113 @@
+import numpy as np
+
+# q is the current config to be projected, qi is the impact config
+def P(z):
+    ph = phi(z)
+    if ph >= 0 :
+        return z
+    else :
+        def delta(i): 
+            return Minv(z)[i,1]/Minv(z)[1,1]
+        return np.array([ z[0] - 2*z[1]/(1+k*(z[1]**2))*delta(0), -z[1] ]) 
+       
+# same as P()       
+def DP(z):
+    ph = phi(z)
+    if ph > 0 : 
+        print("you shouldn't be calling DP() when phi(z)>0")
+        return np.eye(2)
+    else :
+        return np.array([[ 1 - 2*z[1])*delsomething,
+                          -delsomthing -delsomething],
+                        [0, 1]])# ok i need to figure out what the 
+    # derivative of P() is and plop # it here. Not as easy as I thought
+
+# this extracts the "actual" configuration from the transformed ones
+def q(z):
+    if len(z) == 2 : # we are passing a configuration
+        return np.array([ z[0], z[1]+np.sin(z[0]) ])
+    elif len(z) == 4 :  # we are passing in a state
+        return np.array([ z[0], z[1]+np.sin(z[0]) ])
+    else :
+        raise NameError('wrong length of argument')
+
+# this extracts the configuration from the state
+def z(x):
+    return np.array([x[0], x[1]])
+
+def phi(z): 
+    return z[1] 
+
+def Dphi(z): 
+    return np.array([ 0, 1 ])
+
+def Psi(q):
+    return np.array([ q[0], q[1]-np.sin(q[0]) ])
+
+def DPsi(q):
+    return np.array([ [1, 0], [-np.cos(q[0]), 1] ])
+
+def DPsiInv(q):
+    return np.array([ [1, 0], [np.cos(q[0]), 1] ])
+
+def M(z, mabar=True):
+    if mbar:
+        return np.dot( np.dot( DPsiInv(q(z)).T, M(q(z), mbar=False) ), DPsiInv(q(z)) )
+    else :
+        return m * np.eye(2)
+
+def Minv(z, mbar=True):
+    if mbar:
+        return np.dot( np.dot( DPsiInv(q(z)), Minv(q(z), mbar=False) ), DPsiInv(q(z)).T )
+    else :
+        return (1/m) * np.eye(2)
+
+def f(t, x):
+    if phi(z(x)) > 0 :
+        return np.array([x[2], x[3], 0, -m*g])
+    else:
+        return np.array([x[2], x[3], 0, m*g])
+
+def Df(t, x):
+    if phi(z(x)) > 0 :
+        return [[0, 0, 1, 0], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0]]
+    else :
+        return [[0, 0, 1, 0], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0]]
+
+
+k = 1.0
+m = 1.0
+g = 9.8
+init = np.array([0, 10, 1, 2])
+
+from scipy.integrate import ode
+
+solver = ode(f)
+solver.set_integrator('vode', max_step=1e-1)
+solver.set_initial_value(init, 0)
+tfinal = 30
+dt = 1e-3
+t = [0]
+x = [init]
+
+
+while solver.successful() and solver.t < tfinal :
+    solver.integrate(tfinal, step=True)
+    x.append(solver.y);
+    t.append(solver.t);
+    # check for zero crossing
+    gg1 = phi(z(x[-1]))
+    gg0 = phi(z(x[-2])) 
+    if gg0*gg1 < 0 :
+        # find zero crossing
+        # interpolate for now
+        tcross = t[-2] - gg0*(t[-1]-t[-2])/(gg1-gg0)
+        xcross = x[-2] - gg0*(x[-1]-x[-2])/(gg1-gg0)
+        # replace wrong x and t
+        x[-1] = xcross
+        t[-1] = tcross
+        # reset integration but switch f
+        solver.set_initial_value(xcross, tcross)
+        print("found intersection at t=%f", tcross)
+    
+
