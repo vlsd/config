@@ -223,7 +223,7 @@ init = np.concatenate((Psi(qinit), np.dot(DPsi(qinit), qdoti) ))
 from scipy.integrate import ode
 
 solver = ode(f)
-solver.set_integrator('vode', max_step=1e-1, min_step=1e-5, method = 'bdf')
+solver.set_integrator('vode', max_step=1e-1, min_step=1e-7, method = 'bdf')
 solver.set_initial_value(init, 0)
 tfinal = 10
 dt = 1e-3

@@ -120,7 +120,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -259,42 +259,17 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="A-space">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching -->
-    <keybind key="A-Tab">
-      <action name="NextWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="A-S-Tab">
-      <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
+    <keybind key="W-Right">
+      <action name="MoveResizeTo">
+        <monitor>next</monitor>
+      </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="MoveResizeTo">
+        <monitor>prev</monitor>
+      </action>
+    </keybind>
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
@@ -316,19 +291,19 @@
       </action>
     </keybind>
     <keybind key="W-Tab">
-        <action name="NextWindow">
+      <action name="NextWindow">
         <allDesktops>yes</allDesktops>
-        </action>
+      </action>
     </keybind>
-    <keybind key="W-S-Tab">
-        <action name="PreviousWindow">
+    <keybind key="W-`">
+      <action name="PreviousWindow">
         <allDesktops>yes</allDesktops>
-        </action>
+      </action>
     </keybind>
     <keybind key="A-F2">
-        <action name="Execute">
-            <command>gmrun</command>
-        </action>
+      <action name="Execute">
+        <command>gmrun</command>
+      </action>
     </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
@@ -341,15 +316,43 @@
       </action>
     </keybind>
     <!-- keybindings for moving windows to edges -->
-    <keybind key="W-KP_8"><action name="MoveResizeTo"><y>0</y></action></keybind>
-    <keybind key="W-KP_6"><action name="MoveResizeTo"><x>-0</x></action></keybind>
-    <keybind key="W-KP_2"><action name="MoveResizeTo"><y>-0</y></action></keybind>
-    <keybind key="W-KP_4"><action name="MoveResizeTo"><x>0</x></action></keybind>
+    <keybind key="W-KP_8">
+      <action name="MoveResizeTo">
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-KP_6">
+      <action name="MoveResizeTo">
+        <x>-0</x>
+      </action>
+    </keybind>
+    <keybind key="W-KP_2">
+      <action name="MoveResizeTo">
+        <y>-0</y>
+      </action>
+    </keybind>
+    <keybind key="W-KP_4">
+      <action name="MoveResizeTo">
+        <x>0</x>
+      </action>
+    </keybind>
     <!-- maximize and maximize vertical -->
-    <keybind key="W-Return">   <action name="ToggleMaximizeFull"></action></keybind>
-    <keybind key="W-A-Return"> <action name="ToggleMaximizeVert"></action></keybind>
-    <keybind key="W-\"> <action name="MoveResizeTo"><width>960</width></action></keybind>
-    <keybind key="W-A-\"> <action name="MoveResizeTo"><width>1200</width></action></keybind>
+    <keybind key="W-Return">
+      <action name="ToggleMaximizeFull"/>
+    </keybind>
+    <keybind key="W-A-Return">
+      <action name="ToggleMaximizeVert"/>
+    </keybind>
+    <keybind key="W-KP_Divide">
+      <action name="MoveResizeTo">
+        <width>960</width>
+      </action>
+    </keybind>
+    <keybind key="W-A-KP_Divide">
+      <action name="MoveResizeTo">
+        <width>1200</width>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -361,7 +364,6 @@
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
     <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
-
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">

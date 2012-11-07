@@ -16,9 +16,9 @@ alias history='fc -l 1'
 
 # List direcory contents
 export LS_OPTIONS='--color'
-alias l='gls $LS_OPTIONS'
-alias ll='gls $LS_OPTIONS -lh'
-alias lll='gls $LS_OPTIONS -alh'
+alias l='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -lh'
+alias lll='ls $LS_OPTIONS -alh'
 alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
