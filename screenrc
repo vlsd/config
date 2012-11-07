@@ -5,7 +5,8 @@ attrcolor b ".I"
 termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
 termcapinfo xterm-256color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
 # erase background with current bg color
-defbce "on"
+# why is this needed?
+# defbce "on"
 
 shell -$SHELL
 hardstatus alwayslastline
@@ -16,5 +17,6 @@ vbell off
 
 escape ``
 
-bind b eval "writebuf" "exec sh -c 'pbcopy </tmp/screen-exchange'"
+# the following line only works in os x
+#bind b eval "writebuf" "exec sh -c 'pbcopy </tmp/screen-exchange'"
 autodetach on
