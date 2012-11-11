@@ -55,3 +55,5 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
