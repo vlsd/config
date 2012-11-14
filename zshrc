@@ -38,7 +38,12 @@ elif [[ `uname -a` = *ARCH* ]]; then
 	distro="yaourt archlinux"
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
-	distro="osx macports gnu-utils"
+	distro="osx macports"
+    # path needed for macports
+    eval PATH="/opt/local/bin:$PATH"
+    # use gnu-utils instead of bsd-utils. needs to be
+    # loaded early in order to work
+    source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
 else
 	print "no known distro detected"
 	distro=""
@@ -48,5 +53,12 @@ plugins=(git $distro python lol wakeonlan screen)
 
 source $ZSH/oh-my-zsh.sh
 
+<<<<<<< HEAD
 # add some stuff to the path
 PATH="/home/vlad/bin:"$PATH
+=======
+
+# Customize to your needs...
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+>>>>>>> 091f0dd6f0dccf4d598b8708a6454691fa5701c3
