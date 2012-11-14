@@ -48,5 +48,5 @@ plugins=(git $distro python lol wakeonlan screen)
 
 source $ZSH/oh-my-zsh.sh
 
-
-# Customize to your needs...
+# add some stuff to the path
+PATH="/home/vlad/bin:"$PATH
