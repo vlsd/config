@@ -29,8 +29,6 @@ nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 set t_Co=256
 colorscheme default
 set background=light
-highlight Normal guibg=Grey12 guifg=White
-set guioptions-=T   " don't display that useless toolbar in gvim
 
 " ctags for latex
 let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'

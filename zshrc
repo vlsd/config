@@ -33,14 +33,18 @@ COMPLETION_WAITING_DOTS="true"
 if [[ `uname -a` = *Debian* ]]; then
 	print "Debian detected"
 	distro="debian"
+    # add some stuff to the path
+    eval PATH="/home/vlad/bin:"$PATH
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
 	distro="yaourt archlinux"
+    # add some stuff to the path
+    eval PATH="/home/vlad/bin:"$PATH
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
 	distro="osx macports"
     # path needed for macports
-    eval PATH="/opt/local/bin:$PATH"
+    eval PATH="/Users/vlad/bin:/opt/local/bin:$PATH"
     # use gnu-utils instead of bsd-utils. needs to be
     # loaded early in order to work
     source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
