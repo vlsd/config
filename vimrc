@@ -28,7 +28,7 @@ nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 " colorscheme set to default
 set t_Co=256
 colorscheme default
-set background=dark
+set background=light
 highlight Normal guibg=Grey12 guifg=White
 set guioptions-=T   " don't display that useless toolbar in gvim
 
