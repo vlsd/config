@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# mvim-pdfsync: Script for opening a file in Vim in OS X and positioning
+#               the cursor at a particular line. If the file is already
+#               open in an existing Vim, the cursor will be repositioned
+#               re-opening the file. Script made to work with MacVim
+#               (i.e., mvim and not gvim). This version opens files in
+#               MacVim's tabs (rather than windows).
+#
+#               The script is meant to extend the inverse searching
+#               (c.f. PDFSync compatible PDF viewers (e.g., Skim or
+#               TeXniscope) or DVI viewers that pay attention to 
+#               source specials (e.g., TeXniscope)) to MacVim.
+#
+# Version: 1.00
+#
+# Author: Ted Pavlic
+#         ted@tedpavlic.com
+#         http://www.tedpavlic.com/
+#
+# Usage: mvimtab-pdfsync "%file" [%line]
+#
+#        where %file is a file name and %line is a line number.
+#
+# For more information (and history), see:
+#
+# http://phaseportrait.blogspot.com/2007/12/pdfsync-inverse-searches-in-macvim.html
+#
+# Version history:
+#
+# 1.0  : 12/29/2007 - Initial release (Ted Pavlic)
+#
+
+if [ "$1" == "" ]; then
+        echo "Usage: mvimtab-pdfsync FILE [lineNumber]" >&2
+        exit 1
+fi
+
+filename="$1"
+lineNum="$2"
+lineNumOpt=""
+
+[ "${filename:0:1}" == "/" ] || filename="${PWD}/${filename}"
+
+[ "${lineNum}" == "" ] || lineNumOpt="+:${lineNum};foldo!"
+
+exec mvim --remote-tab-silent ${lineNumOpt} ${filename}
