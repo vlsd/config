@@ -1,7 +1,0 @@
-#!/bin/sh
-
-PYTHON=/opt/local/bin/python
-QL=/Users/vlad/.quodlibet/quodlibet_hg/quodlibet/quodlibet.py
-LOGGER=/usr/bin/logger
-
-$PYTHON $QL #2>&1 #| logger -t QLIBET &
