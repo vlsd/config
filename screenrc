@@ -20,3 +20,6 @@ escape ``
 # the following line only works in os x
 #bind b eval "writebuf" "exec sh -c 'pbcopy </tmp/screen-exchange'"
 autodetach on
+
+# do not clear the screen after less
+alterscreen off

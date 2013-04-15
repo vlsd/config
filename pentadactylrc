@@ -1,5 +1,7 @@
 "hg6691
 
+autocmd LocationChange docs.google.com :normal! <C-z>
+
 " this is in order to display the zotero import icon in the tray instead of
 " the navigation bar
 javascript <<EOF
@@ -12,5 +14,7 @@ javascript <<EOF
           .insertBefore(zoteroPanel, document.getElementById("security-button"));
 })();
 EOF
+
+
 
 " vim: set ft=pentadactyl:

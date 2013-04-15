@@ -60,3 +60,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 zstyle ':completion:*' use-cache on
+
+# add syntax color and piping to less
+export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -RXF '
+export CLICOLOR_FORCE="true"
