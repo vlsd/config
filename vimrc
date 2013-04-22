@@ -2,7 +2,7 @@ set go-=M
 
 filetype on
 filetype plugin indent on
-syntax on
+syntax enable 
 
 set tabstop=4
 set shiftwidth=4
@@ -27,8 +27,8 @@ nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " colorscheme set to default
 set t_Co=256
-colorscheme default
-set background=light
+colorscheme badwolf
+set background=dark
 
 " ctags for latex
 let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
