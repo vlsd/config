@@ -5,12 +5,12 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#2e3436:#ea3a3a:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#f17171:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     cursor_shape = underline
     use_system_font = False
-    foreground_color = "#d8d4d4"
-    font = DejaVu Sans Mono 11
-    background_color = "#212121"
+    foreground_color = "#dcdcdc"
+    font = Meslo LG M 10
+    background_color = "#121212"
 [layouts]
   [[default]]
     [[[child1]]]

@@ -27,8 +27,7 @@ nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " colorscheme set to default
 set t_Co=256
-colorscheme default
-set background=light
+colorscheme badwolf
 
 " ctags for latex
 let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
