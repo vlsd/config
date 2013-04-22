@@ -35,22 +35,26 @@ if [[ `uname -a` = *Debian* ]]; then
 	distro="debian"
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
+    eval USRBINDIR="/usr/local/bin/"
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
 	distro="yaourt archlinux"
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
+    eval USRBINDIR="/usr/bin/"
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
 	distro="osx macports"
     # path needed for macports
-    eval PATH="/Users/vlad/bin:/opt/local/bin:$PATH"
+    eval PATH="/Users/vlad/bin:/opt/local/bin:"$PATH
     # use gnu-utils instead of bsd-utils. needs to be
     # loaded early in order to work
     source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
+    eval USRBINDIR="/opt/local/bin/"
 else
 	print "no known distro detected"
 	distro=""
+    USRBINDIR="/urs/bin/"
 fi
 
 plugins=(git $distro python lol wakeonlan screen) 
@@ -62,6 +66,6 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' use-cache on
 
 # add syntax color and piping to less
-export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESSOPEN="| "$USRBINDIR"src-hilite-lesspipe.sh %s"
 export LESS=' -RXF '
 export CLICOLOR_FORCE="true"
