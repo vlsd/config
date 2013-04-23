@@ -1,3 +1,8 @@
+filetype off
+" enable pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 set go-=M
 
 filetype on
@@ -11,10 +16,23 @@ set expandtab
 set softtabstop=4
 set autoindent
 set number
+set foldmethod=indent
+set foldlevel=99
 
 set backup
 set backupdir=~/.vim/backup
 
+
+" pep8 keymap
+let g:pep8_map='<leader>8'
+
+" pyflakes config
+let g:pyflakes_use_quickfix=0 
+
+" supertab config
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
 " minibufexplorer options
 "let g:miniBufExplMapWindowNavVim = 1
@@ -25,13 +43,9 @@ set backupdir=~/.vim/backup
 " change directory to current file
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
-" colorscheme set to default
+" colorscheme setting
 set t_Co=256
 colorscheme badwolf
-<<<<<<< HEAD
-=======
-set background=dark
->>>>>>> d30bf02c5706c5d1f3f298f3b8077f01864ce1e0
 
 " ctags for latex
 let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
@@ -74,7 +88,7 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 " for pydoc
 let g:pydoc_open_cmd='vsplit'
 
-" set modeline
+" quick and dirty way to sudo save
 cmap w!! %!sudo tee > /dev/null %
 
 " default mappings for FuzzyFinder (fuf)
