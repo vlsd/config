@@ -1,3 +1,6 @@
+# First we change the pallete on the terminal
+$HOME/bin/ttypal
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
