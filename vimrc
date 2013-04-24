@@ -44,7 +44,12 @@ set completeopt=menuone,longest,preview
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " colorscheme setting
-set t_Co=256
+if (&term =~ "xterm") || (&term =~ "screen")
+    set t_Co=256
+elseif (&term =~ "linux")
+    " fallback theme for tty usage
+    colorscheme peachpuff
+endif
 colorscheme badwolf
 
 " ctags for latex
