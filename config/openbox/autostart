@@ -16,6 +16,9 @@
 #
 #xfce-mcs-manager &
 
+xscreensaver -no-splash  &
 cairo-compmgr &
 tint2 &
 conky &
+terminator &
+firefox &
