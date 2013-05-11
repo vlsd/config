@@ -6,11 +6,16 @@
   [[default]]
     scrollbar_position = hidden
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    background_image = /home/vlad/atlas.png
     cursor_shape = underline
     use_system_font = False
     foreground_color = "#dcdcdc"
     font = Meslo LG M 10
     background_color = "#121212"
+  [[atlas]]
+    background_image = /home/vlad/atlas.png
+    background_type = image
+    scroll_background = False
 [layouts]
   [[default]]
     [[[child1]]]
