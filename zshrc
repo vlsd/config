@@ -45,6 +45,7 @@ elif [[ `uname -a` = *ARCH* ]]; then
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/bin/"
+    export PDFVIEW="/usr/bin/mupdf"
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
 	distro="osx macports"
