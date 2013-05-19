@@ -141,3 +141,7 @@ cmap w!! %!sudo tee > /dev/null %
   nnoremap <silent> se     :FufEditDataFile<CR>
   nnoremap <silent> sr     :FufRenewCache<CR>
 
+" mappings for emacs-like behavior in command line
+cnoremap <C-A> <Home>
+cnoremap <C-F> <S-Right>
+cnoremap <C-B> <S-Left>
