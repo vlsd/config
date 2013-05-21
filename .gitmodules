@@ -7,9 +7,6 @@
 [submodule "vim/bundle/pep8"]
 	path = vim/bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
-[submodule "vim/bundle/pyflakes"]
-	path = vim/bundle/pyflakes
-	url = https://github.com/mitechie/pyflakes-pathogen.git
 [submodule "vim/bundle/L9"]
 	path = vim/bundle/L9
 	url = git://github.com/vim-scripts/L9.git
@@ -19,3 +16,6 @@
 [submodule "vim/bundle/LaTeX-Box"]
 	path = vim/bundle/LaTeX-Box
 	url = git://github.com/vim-scripts/LaTeX-Box.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
