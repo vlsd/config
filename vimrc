@@ -1,7 +1,7 @@
 filetype off
 " enable pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+call pathogen#infect()
 
 set go-=M
 
