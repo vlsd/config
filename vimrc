@@ -1,6 +1,10 @@
 filetype off
 " enable pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
+
+" To disable a plugin, add it's bundle name to the following list
+" let g:pathogen_disabled = ['syntastic']
+
 call pathogen#infect()
 
 set go-=M
