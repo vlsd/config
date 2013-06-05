@@ -10,10 +10,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="vlsd"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -73,3 +69,6 @@ zstyle ':completion:*' use-cache on
 export LESSOPEN="| "$USRBINDIR"src-hilite-lesspipe.sh %s"
 export LESS=' -RXF '
 export CLICOLOR_FORCE="true"
+
+alias l='ls $LS_OPTIONS -a'
+alias ll='ls $LS_OPTIONS -Alh'
