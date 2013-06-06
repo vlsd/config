@@ -10,10 +10,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="vlsd"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -35,25 +31,25 @@ COMPLETION_WAITING_DOTS="true"
 # determine what system we're running on
 if [[ `uname -a` = *Debian* ]]; then
 	print "Debian detected"
-	distro="debian"
+    distro=(debian)
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/local/bin/"
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
-	distro="yaourt archlinux"
+	distro=(yaourt archlinux systemd)
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/bin/"
     export PDFVIEW="/usr/bin/mupdf"
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
-	distro="osx macports"
+    distro=(osx macports)
     # path needed for macports
-    eval PATH="/Users/vlad/bin:/opt/local/bin:"$PATH
+    eval PATH="/opt/local/libexec/gnubin:/Users/vlad/bin:/opt/local/bin:"$PATH
     # use gnu-utils instead of bsd-utils. needs to be
     # loaded early in order to work
-    source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
+    # source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
     eval USRBINDIR="/opt/local/bin/"
 else
 	print "no known distro detected"
@@ -61,7 +57,7 @@ else
     USRBINDIR="/urs/bin/"
 fi
 
-plugins=(git $distro python lol wakeonlan screen) 
+plugins=(git git-extras cp rsync $distro python lol wakeonlan screen) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,3 +69,6 @@ zstyle ':completion:*' use-cache on
 export LESSOPEN="| "$USRBINDIR"src-hilite-lesspipe.sh %s"
 export LESS=' -RXF '
 export CLICOLOR_FORCE="true"
+
+alias l='ls $LS_OPTIONS -a'
+alias ll='ls $LS_OPTIONS -Alh'
