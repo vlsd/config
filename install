@@ -1,0 +1,20 @@
+#!/bin/sh
+rm $HOME/.zshrc
+ln -sfvr zshrc $HOME/.zshrc
+ln -sfvr oh-my-zsh $HOME/.oh-my-zsh
+rm $HOME/.gitconfig
+ln -sfvr gitconfig $HOME/.gitconfig
+rm $HOME/.latexmkrc
+ln -sfvr latexmkrc $HOME/.latexmkrc
+rm $HOME/.pentadactylrc
+ln -sfvr pentadactylrc $HOME/.pentadactylrc
+rm $HOME/.screenrc
+ln -sfvr screenrc $HOME/.screenrc
+rm $HOME/.conkyrc
+ln -sfvr conkyrc $HOME/.conkyrc
+ln -sfvr vim $HOME/.vim
+rm $HOME/.vimrc
+ln -sfvr vimrc $HOME/.vimrc
+ln -sfvr bin $HOME/bin
+ln -sfvr config $HOME/.config
+ln -sfvr htop $HOME/.htop
