@@ -1,2 +1,2 @@
-clean up my vim folder. that thing is a mess
-some other stuff
+finish writing the script; right now there's a problem with linking when the
+destination file already exists (not for directories though, weird).
