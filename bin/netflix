@@ -1,0 +1,4 @@
+#!/bin/bash
+openbox &
+netflix-desktop "$1"
+kill %1

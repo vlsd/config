@@ -35,6 +35,7 @@ if [[ `uname -a` = *Debian* ]]; then
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/local/bin/"
+    export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
 	distro=(yaourt archlinux systemd)
@@ -42,6 +43,7 @@ elif [[ `uname -a` = *ARCH* ]]; then
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/bin/"
     export PDFVIEW="/usr/bin/mupdf"
+    export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
     distro=(osx macports)
@@ -51,6 +53,7 @@ elif [[ `uname -a` = *Darwin* ]]; then
     # loaded early in order to work
     # source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
     eval USRBINDIR="/opt/local/bin/"
+    export LESSOPEN="| /opt/local/bin/src-hilite-lesspipe.sh %s"
 else
 	print "no known distro detected"
 	distro=""
@@ -66,7 +69,6 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' use-cache on
 
 # add syntax color and piping to less
-export LESSOPEN="| "$USRBINDIR"src-hilite-lesspipe.sh %s"
 export LESS=' -RXF '
 export CLICOLOR_FORCE="true"
 
