@@ -36,6 +36,7 @@ if [[ `uname -a` = *Debian* ]]; then
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/local/bin/"
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+    alias vless='/usr/share/vim/vim73/macros/less.sh'
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
 	distro=(yaourt archlinux systemd)
@@ -76,3 +77,6 @@ alias l='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -Alh'
 
 alias sudo='nocorrect sudo'
+
+export EDITOR=`which vim`
+export VISUAL=`which vim`
