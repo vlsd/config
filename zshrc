@@ -80,3 +80,10 @@ alias sudo='nocorrect sudo'
 
 export EDITOR=`which vim`
 export VISUAL=`which vim`
+
+# if vimpager is installed, use it
+if [[ -x `which vimpager` ]]; then
+    export PAGER=`which vimpager`
+    alias less=$PAGER
+    alias zless=$PAGER
+fi
