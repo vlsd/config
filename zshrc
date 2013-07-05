@@ -76,3 +76,10 @@ alias l='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -Alh'
 
 alias sudo='nocorrect sudo'
+
+# if vimpager is installed, use it
+if [[ -x `which vimpager` ]]; then
+    export PAGER=`which vimpager`
+    alias less=$PAGER
+    alias zless=$PAGER
+fi

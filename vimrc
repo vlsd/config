@@ -102,3 +102,6 @@ cmap w!! %!sudo tee > /dev/null %
 cnoremap <C-A> <Home>
 cnoremap <C-F> <S-Right>
 cnoremap <C-B> <S-Left>
+
+let vimpager_passthrough = 1
+let vimpager_disable_x11 = 1
