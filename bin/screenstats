@@ -1,0 +1,5 @@
+#!/bin/sh
+
+LOAD=$(awk < /proc/loadavg '{print $1}')
+MEM=$(free -ho |awk 'FNR==2 {print $4"/"$2}')
+echo "L:$LOAD Mem:$MEM"

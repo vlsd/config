@@ -83,3 +83,7 @@ if [[ -x `which vimpager` ]]; then
     alias less=$PAGER
     alias zless=$PAGER
 fi
+
+# disable git when mounting dagon over sshfs
+zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
+
