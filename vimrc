@@ -105,3 +105,5 @@ cnoremap <C-B> <S-Left>
 
 let vimpager_passthrough = 1
 let vimpager_disable_x11 = 1
+
+let g:syntastic_tex_checkers=['chktex'] 

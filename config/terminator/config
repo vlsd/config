@@ -1,7 +1,12 @@
 [global_config]
-  enabled_plugins = CustomCommandsMenu,
+  enabled_plugins = ,
   dbus = True
 [keybindings]
+  new_tab = <Primary>t
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_1 = <Alt>1
 [profiles]
   [[default]]
     scrollbar_position = hidden

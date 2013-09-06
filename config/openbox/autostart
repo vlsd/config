@@ -16,6 +16,7 @@
 #
 #xfce-mcs-manager &
 
+nvidia-settings --load-config-only
 xscreensaver -no-splash  &
 cairo-compmgr &
 tint2 &

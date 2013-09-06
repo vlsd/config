@@ -38,7 +38,7 @@ if [[ `uname -a` = *Debian* ]]; then
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
-	distro=(yaourt archlinux systemd)
+	distro=(yaourt archlinux systemd sprunge)
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/bin/"
@@ -83,3 +83,7 @@ if [[ -x `which vimpager` ]]; then
     alias less=$PAGER
     alias zless=$PAGER
 fi
+
+# disable git when mounting dagon over sshfs
+zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
+
