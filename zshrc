@@ -87,3 +87,5 @@ fi
 # disable git when mounting dagon over sshfs
 zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
 
+# make vim default editor
+export EDITOR="vim"
