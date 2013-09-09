@@ -23,9 +23,6 @@
 [submodule "vimpager"]
 	path = vimpager
 	url = https://github.com/rkitover/vimpager.git
-[submodule "vim-unimpaired"]
-	path = vim-unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
