@@ -214,4 +214,4 @@ ${color lightgrey}File systems:
 ${color lightgrey}Temperatures:
  CPU:$color ${i2c temp 2}C${color grey} - MB:$color ${i2c temp 1}C
 ${color green}$hr
-${execi 5 dmesg | tail -10 | fmt -43 -su}
+${exec journalct -f}

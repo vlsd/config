@@ -24,7 +24,8 @@ set foldmethod=indent
 set foldlevel=99
 
 set backup
-set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
 
 
 " pep8 keymap
