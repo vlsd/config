@@ -103,6 +103,7 @@ let vimpager_disable_x11 = 1
 
 " latex settings
 let g:syntastic_tex_checkers=['chktex'] 
+let g:tex_flavor = "latex"
 let g:tex_conceal="abdgm"
 set cole=2
 
