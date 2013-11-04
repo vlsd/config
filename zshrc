@@ -89,3 +89,7 @@ zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
 
 # make vim default editor
 export EDITOR="vim"
+
+# add debug flag for ipython
+alias ipython='ipython --pdb'
+alias ipython2='ipython2 --pdb'

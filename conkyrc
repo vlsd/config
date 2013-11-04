@@ -40,7 +40,7 @@ double_buffer yes
 
 # Minimum size of text area
 minimum_size 280 5
-maximum_width 340
+maximum_width 1250
 
 # Draw shades?
 draw_shades no
@@ -214,4 +214,4 @@ ${color lightgrey}File systems:
 ${color lightgrey}Temperatures:
  CPU:$color ${i2c temp 2}C${color grey} - MB:$color ${i2c temp 1}C
 ${color green}$hr
-${exec journalct -f}
+#${execi 5 journalctl -x -p 5 --since=today --no-pager |tail -n 32}
