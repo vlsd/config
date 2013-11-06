@@ -22,3 +22,5 @@ escape ``
 #bind b eval "writebuf" "exec sh -c 'pbcopy </tmp/screen-exchange'"
 autodetach on
 
+# use utf8 encoding
+defutf8 on
