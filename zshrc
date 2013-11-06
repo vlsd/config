@@ -36,10 +36,9 @@ if [[ `uname -a` = *Debian* ]]; then
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/local/bin/"
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-    alias vless='/usr/share/vim/vim73/macros/less.sh'
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
-	distro=(yaourt archlinux systemd)
+	distro=(yaourt archlinux systemd sprunge)
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
     eval USRBINDIR="/usr/bin/"
@@ -78,8 +77,9 @@ alias ll='ls $LS_OPTIONS -Alh'
 
 alias sudo='nocorrect sudo'
 
-export EDITOR=`which vim`
-export VISUAL=`which vim`
+# make vim default editor
+export EDITOR="vim"
+export VISUAL="vim"
 
 # if vimpager is installed, use it
 if [[ -x `which vimpager` ]]; then
@@ -93,3 +93,9 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+
+# disable git when mounting dagon over sshfs
+zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
+
+# add debug flag for ipython2
+alias ipython2='ipython2 --pdb'

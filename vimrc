@@ -24,7 +24,8 @@ set foldmethod=indent
 set foldlevel=99
 
 set backup
-set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
 
 
 " pep8 keymap
@@ -50,15 +51,9 @@ nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 " colorscheme setting
 if (&term =~ "xterm") || (&term =~ "screen")
     set t_Co=256
-elseif (&term =~ "linux")
-    " fallback theme for tty usage
-    colorscheme peachpuff
 endif
 colorscheme badwolf
 
-" ctags for latex
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
-let tlist_make_settings  = 'make;m:makros;t:targets'
 
 
 " Mappings to access buffers (don't use "\p" because a
@@ -105,3 +100,13 @@ cnoremap <C-B> <S-Left>
 
 let vimpager_passthrough = 1
 let vimpager_disable_x11 = 1
+
+" latex settings
+let g:syntastic_tex_checkers=['chktex'] 
+let g:tex_flavor = "latex"
+let g:tex_conceal="abdgm"
+set cole=2
+
+" ctags for latex
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+let tlist_make_settings  = 'make;m:makros;t:targets'

@@ -178,6 +178,7 @@ endif
 " General/UI {{{
 
 call s:HL('Normal', 'plain', 'blackgravel')
+call s:HL('Conceal', 'tardis', 'bg')
 
 call s:HL('Folded', 'mediumgravel', 'bg', 'none')
 

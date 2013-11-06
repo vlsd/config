@@ -10,6 +10,7 @@
 [submodule "vim/bundle/LaTeX-Box"]
 	path = vim/bundle/LaTeX-Box
 	url = git://github.com/vim-scripts/LaTeX-Box.git
+    ignore = untracked
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -25,3 +26,15 @@
 [submodule "vimpager"]
 	path = vimpager
 	url = https://github.com/rkitover/vimpager.git
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = git://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/windowswap"]
+	path = vim/bundle/windowswap
+	url = https://github.com/wesQ3/vim-windowswap

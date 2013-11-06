@@ -16,11 +16,11 @@
 #
 #xfce-mcs-manager &
 
+nvidia-settings --load-config-only
 xscreensaver -no-splash  &
 cairo-compmgr &
 tint2 &
 conky &
 terminator &
 firefox &
-hotot-gtk2 &
 pidgin &
