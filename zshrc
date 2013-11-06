@@ -86,4 +86,10 @@ if [[ -x `which vimpager` ]]; then
     export PAGER=`which vimpager`
     alias less=$PAGER
     alias zless=$PAGER
+    alias qless=$USRBINDIR"less"
 fi
+
+# locale stuff
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
