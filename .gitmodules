@@ -20,6 +20,9 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vim/bundle/securemodelines"]
+	path = vim/bundle/securemodelines
+	url = https://github.com/ciaranm/securemodelines.git
 [submodule "vimpager"]
 	path = vimpager
 	url = https://github.com/rkitover/vimpager.git

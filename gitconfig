@@ -1,6 +1,7 @@
 [user]
-	email = vlad.seghete@gmail.com
 	name = Vlad Seghete
+	email = vlad.seghete@gmail.com
+
 [alias]
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 #[push]

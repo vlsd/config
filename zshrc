@@ -77,19 +77,25 @@ alias ll='ls $LS_OPTIONS -Alh'
 
 alias sudo='nocorrect sudo'
 
+# make vim default editor
+export EDITOR="vim"
+export VISUAL="vim"
+
 # if vimpager is installed, use it
 if [[ -x `which vimpager` ]]; then
     export PAGER=`which vimpager`
     alias less=$PAGER
     alias zless=$PAGER
+    alias qless=$USRBINDIR"less"
 fi
+
+# locale stuff
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 # disable git when mounting dagon over sshfs
 zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
 
-# make vim default editor
-export EDITOR="vim"
-
-# add debug flag for ipython
-alias ipython='ipython --pdb'
+# add debug flag for ipython2
 alias ipython2='ipython2 --pdb'
