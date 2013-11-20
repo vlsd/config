@@ -48,7 +48,7 @@ elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
     distro=(osx macports)
     # path needed for macports
-    eval PATH="/opt/local/libexec/gnubin:/Users/vlad/bin:/opt/local/bin:"$PATH
+    eval PATH="~/bin:/opt/local/libexec/gnubin:/Users/vlad/bin:/opt/local/bin:"$PATH
     # use gnu-utils instead of bsd-utils. needs to be
     # loaded early in order to work
     # source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
@@ -58,6 +58,7 @@ else
 	print "no known distro detected"
 	distro=""
     USRBINDIR="/urs/bin/"
+    eval PATH="~/bin:"$PATH
 fi
 
 plugins=(git git-extras cp rsync $distro python lol wakeonlan screen) 
