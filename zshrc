@@ -100,3 +100,15 @@ zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
 
 # add debug flag for ipython2
 alias ipython2='ipython2 --pdb'
+
+# if ros is installed
+# pick out what version of ros we are using
+export ROS_DISTRO="groovy"
+if [[ -a /opt/ros/$ROS_DISTRO/setup.zsh ]]; then
+    source /opt/ros/$ROS_DISTRO/setup.zsh
+fi
+
+# also load the allegro_hand environment if it is installed
+if [[ -a ~/allegro_ws/setup.zsh ]]; then
+    source ~/allegro_ws/setup.zsh
+fi
