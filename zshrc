@@ -98,9 +98,6 @@ export LANGUAGE=en_US.UTF-8
 # disable git when mounting dagon over sshfs
 zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
 
-# add debug flag for ipython2
-alias ipython2='ipython2 --pdb'
-
 # if ros is installed
 # pick out what version of ros we are using
 export ROS_DISTRO="groovy"
