@@ -34,7 +34,7 @@ if [[ `uname -a` = *Debian* ]]; then
     distro=(debian)
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
-    eval USRBINDIR="/usr/local/bin/"
+    eval USRBINDIR="/usr/bin/"
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
