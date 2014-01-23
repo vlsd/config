@@ -34,7 +34,7 @@ if [[ `uname -a` = *Debian* ]]; then
     distro=(debian)
     # add some stuff to the path
     eval PATH="/home/vlad/bin:"$PATH
-    eval USRBINDIR="/usr/local/bin/"
+    eval USRBINDIR="/usr/bin/"
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ `uname -a` = *ARCH* ]]; then
 	print "ARCH detected"
@@ -73,9 +73,15 @@ zstyle ':completion:*' use-cache on
 export LESS=' -RXF '
 export CLICOLOR_FORCE="true"
 
+# alias crep to mean grep with color=always ; used when piping into less, e.g.
+alias crep='grep --color=always'
+
+# useful ls aliases
 alias l='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -Alh'
 
+
+# what does this do again?
 alias sudo='nocorrect sudo'
 
 # make vim default editor
@@ -98,5 +104,14 @@ export LANGUAGE=en_US.UTF-8
 # disable git when mounting dagon over sshfs
 zstyle ':vcs_info:' disable-patterns "$HOME/dagon(|/*)"
 
-# add debug flag for ipython2
-alias ipython2='ipython2 --pdb'
+# if ros is installed
+# pick out what version of ros we are using
+export ROS_DISTRO="groovy"
+if [[ -a /opt/ros/$ROS_DISTRO/setup.zsh ]]; then
+    source /opt/ros/$ROS_DISTRO/setup.zsh
+fi
+
+# also load the allegro_hand environment if it is installed
+if [[ -a ~/allegro_ws/setup.zsh ]]; then
+    source ~/allegro_ws/setup.zsh
+fi

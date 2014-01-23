@@ -1,11 +1,8 @@
 [user]
 	name = Vlad Seghete
 	email = vlad.seghete@gmail.com
-
 [alias]
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
-#[push]
-#	default = simple
 [core]
 	editor = vim
 [color]
