@@ -73,9 +73,15 @@ zstyle ':completion:*' use-cache on
 export LESS=' -RXF '
 export CLICOLOR_FORCE="true"
 
+# alias crep to mean grep with color=always ; used when piping into less, e.g.
+alias crep='grep --color=always'
+
+# useful ls aliases
 alias l='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -Alh'
 
+
+# what does this do again?
 alias sudo='nocorrect sudo'
 
 # make vim default editor
