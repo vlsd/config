@@ -2,8 +2,7 @@
 
 # if cpusage is not running, start it
 if ! pidof -x cpusage > /dev/null
-then
-    cpusage &!
+then cpusage &
 fi
 
 #LOAD=$(awk < /proc/loadavg '{print $1}')
