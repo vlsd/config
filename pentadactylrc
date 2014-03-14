@@ -15,6 +15,4 @@ javascript <<EOF
 })();
 EOF
 
-
-
-" vim: set ft=pentadactyl:
+" vim: set ft=javascript:

@@ -110,3 +110,5 @@ set cole=2
 " ctags for latex
 let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
 let tlist_make_settings  = 'make;m:makros;t:targets'
+
+
