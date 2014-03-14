@@ -15,7 +15,7 @@
     cursor_shape = underline
     use_system_font = False
     foreground_color = "#dcdcdc"
-    font = Meslo LG M 10
+    font = Monospace 11
     background_color = "#121212"
   [[atlas]]
     background_image = /home/vlad/atlas.png

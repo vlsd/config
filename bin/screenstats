@@ -1,5 +1,11 @@
 #!/bin/sh
 
-LOAD=$(awk < /proc/loadavg '{print $1}')
-MEM=$(free -ho |awk 'FNR==2 {print $4"/"$2}')
-echo "L:$LOAD Mem:$MEM"
+# if cpusage is not running, start it
+if ! pidof -x cpusage > /dev/null
+then cpusage &
+fi
+
+#LOAD=$(awk < /proc/loadavg '{print $1}')
+MEM=$(free |awk 'FNR==3 {print 100*$3/($3+$4)}' OFMT="%2.f")
+CPU=$(cat /var/tmp/vlad_cpu)
+echo "Cpu:$CPU% Mem:$MEM%"

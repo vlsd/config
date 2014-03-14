@@ -710,6 +710,18 @@
   <!-- show the manage desktops section in the client-list-(combined-)menu -->
 </menu>
   <applications>
+      <application class="Corebird">
+          <desktop>0</desktop>
+          <position>
+              <x>0</x>
+              <y>430</y>
+              <monitor>0</monitor>
+          </position>
+          <size>
+              <width>443</width>
+              <height>620</height>
+          </size>
+      </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.

@@ -1,4 +1,4 @@
 #!/bin/bash
 #openbox &
-sudo netflix-desktop #"$1"
+iceweasel #"$1"
 #kill %1
