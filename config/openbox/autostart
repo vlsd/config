@@ -18,9 +18,11 @@
 
 nvidia-settings --load-config-only
 xscreensaver -no-splash  &
-cairo-compmgr &
-tint2 &
+hsetroot -solid "#303030" &
+# Launch Xcomppmgr and tint2 with openbox
+if which tint2 >/dev/null 2>&1; then
+    (sleep 2 && compton -b) &
+    (sleep 2 && tint2) &
+fi
 conky &
 terminator &
-firefox &
-pidgin &
