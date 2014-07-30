@@ -1,20 +1,15 @@
-#!/bin/bash
-#rm $HOME/.zshrc
-ln -sfvT $PWD/zshrc $HOME/.zshrc
-ln -sfvT $PWD/oh-my-zsh $HOME/.oh-my-zsh
-#rm $HOME/.gitconfig
-ln -sfvT $PWD/gitconfig $HOME/.gitconfig
-#rm $HOME/.latexmkrc
-ln -sfvT $PWD/latexmkrc $HOME/.latexmkrc
-#rm $HOME/.pentadactylrc
-ln -sfvT $PWD/pentadactylrc $HOME/.pentadactylrc
-#rm $HOME/.screenrc
-ln -sfvT $PWD/screenrc $HOME/.screenrc
-#rm $HOME/.conkyrc
-ln -sfvT $PWD/conkyrc $HOME/.conkyrc
-ln -sfvT $PWD/vim $HOME/.vim
-#rm $HOME/.vimrc
-ln -sfvT $PWD/vimrc $HOME/.vimrc
-ln -sfvT $PWD/bin $HOME/bin
-ln -sfvT $PWD/config $HOME/.config
-ln -sfvT $PWD/htop $HOME/.htop
+#!/bin/zsh
+BIN='gln'
+OPTS='-sfvT'
+FILES=(zshrc oh-my-zsh gitconfig latexmkrc pentadactylrc screenrc vim vimrc)
+
+for f in $FILES; do
+    $BIN $OPTS $PWD/$f $HOME/.$f
+done
+
+# special case for bin, does not get a dot
+$BIN $OPTS $PWD/bin $HOME/bin
+
+# copy stuff that needs to be copied, but is untracked by git
+# due to submodule stuff
+cp -v vlsd.zsh-theme oh-my-zsh/themes/

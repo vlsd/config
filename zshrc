@@ -54,6 +54,14 @@ elif [[ `uname -a` = *Darwin* ]]; then
     # source $ZSH/plugins/gnu-utils/gnu-utils.plugin.zsh
     eval USRBINDIR="/opt/local/bin/"
     export LESSOPEN="| /opt/local/bin/src-hilite-lesspipe.sh %s"
+
+    # choose between Skim and Preview as a pdf viewer
+    if [[ -a "/Applications/Skim.app/" ]]; then
+        export PDFVIEW="open -a Skim"
+    else
+        export PDFVIEW="open -a Preview"
+    fi
+
 else
 	print "no known distro detected"
 	distro=""

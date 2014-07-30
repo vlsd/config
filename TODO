@@ -1,2 +1,1 @@
-finish writing the script; right now there's a problem with linking when the
-destination file already exists (not for directories though, weird).
+Make it work when using either BSD and GNU commands. Tricky. Maybe an if-else statement?
