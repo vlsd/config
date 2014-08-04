@@ -46,7 +46,7 @@ elif [[ `uname -a` = *ARCH* ]]; then
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ `uname -a` = *Darwin* ]]; then
 	print "OSX detected"
-    distro=(osx macports)
+    distro=(osx macports vagrant pip)
     # path needed for macports
     eval PATH="~/bin:/opt/local/libexec/gnubin:/Users/vlad/bin:/opt/local/bin:"$PATH
     # use gnu-utils instead of bsd-utils. needs to be
