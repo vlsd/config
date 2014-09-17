@@ -35,10 +35,11 @@ local return_code="%(?..%{$PR_RED%}%? %{$PR_NO_COLOR%})"
 local user_host='${PR_USER}${PR_CYAN}@${PR_HOST}'
 local current_dir="%{$PR_BOLD$PR_BLUE%}%~%{$PR_NO_COLOR%}"
 local git_branch='$(git_prompt_info)%{$PR_NO_COLOR%}'
+local hg_info='${PR_CYAN}[$(hg_prompt_info)]%{$PR_NO_COLOR%}'
 
 #PROMPT="${user_host} ${current_dir} ${rvm_ruby} ${git_branch}$PR_PROMPT "
 PROMPT="
-${user_host} ${current_dir} ${git_branch}
+${user_host} ${current_dir} ${git_branch} ${hg_info}
 $PR_PROMPT "
 RPS1="${return_code}"
 
