@@ -5,6 +5,7 @@
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [push]
