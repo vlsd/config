@@ -178,7 +178,6 @@ endif
 " General/UI {{{
 
 call s:HL('Normal', 'plain', 'blackgravel')
-call s:HL('Conceal', 'tardis', 'bg')
 
 call s:HL('Folded', 'mediumgravel', 'bg', 'none')
 
@@ -391,6 +390,26 @@ call s:HL('InterestingWord6', 'coal', 'taffy')
 
 " hi GreenBar term=reverse ctermfg=white ctermbg=green guifg=coal guibg=#9edf1c
 " hi RedBar   term=reverse ctermfg=white ctermbg=red guifg=white guibg=#C50048
+
+" }}}
+" Rainbow Parentheses {{{
+
+call s:HL('level16c', 'mediumgravel',   '', 'bold')
+call s:HL('level15c', 'dalespale',      '', '')
+call s:HL('level14c', 'dress',          '', '')
+call s:HL('level13c', 'orange',         '', '')
+call s:HL('level12c', 'tardis',         '', '')
+call s:HL('level11c', 'lime',           '', '')
+call s:HL('level10c', 'toffee',         '', '')
+call s:HL('level9c',  'saltwatertaffy', '', '')
+call s:HL('level8c',  'coffee',         '', '')
+call s:HL('level7c',  'dalespale',      '', '')
+call s:HL('level6c',  'dress',          '', '')
+call s:HL('level5c',  'orange',         '', '')
+call s:HL('level4c',  'tardis',         '', '')
+call s:HL('level3c',  'lime',           '', '')
+call s:HL('level2c',  'toffee',         '', '')
+call s:HL('level1c',  'saltwatertaffy', '', '')
 
 " }}}
 " ShowMarks {{{
