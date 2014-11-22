@@ -179,6 +179,8 @@ endif
 
 call s:HL('Normal', 'plain', 'blackgravel')
 
+call s:HL('Conceal', 'dirtyblonde', 'bg')
+
 call s:HL('Folded', 'mediumgravel', 'bg', 'none')
 
 call s:HL('VertSplit', 'lightgravel', 'bg', 'none')
