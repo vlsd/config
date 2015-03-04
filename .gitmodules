@@ -50,3 +50,6 @@
 	path = vim/bundle/windowswap
 	url = https://github.com/wesQ3/vim-windowswap
     ignore = untracked
+[submodule "git-remote-hg"]
+	path = git-remote-hg
+	url = git@github.com:fingolfin/git-remote-hg.git

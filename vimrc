@@ -115,3 +115,6 @@ let tlist_make_settings  = 'make;m:makros;t:targets'
 set breakindent
 set showbreak=..
 
+" use the system clipboard
+set clipboard=unnamed
+
