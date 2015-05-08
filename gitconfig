@@ -11,12 +11,17 @@
 [push]
 	default = upstream
 [diff]
-    tool = gvimdiff
+    tool = mvimdiff
+[merge]
+    tool = mvimdiff
 [difftool "gvimdiff"]
-    cmd = "mvimdiff"
+	path = /opt/local/bin/mvimdiff
+[mergetool "mvimdiff"]
+	cmd = /opt/local/bin/mvimdiff -f "$LOCAL" "$MERGED" "$REMOTE"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[credential]
+	helper = osxkeychain

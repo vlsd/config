@@ -116,5 +116,5 @@ set breakindent
 set showbreak=..
 
 " use the system clipboard
-set clipboard=unnamed
+set clipboard+=unnamed
 

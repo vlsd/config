@@ -53,3 +53,6 @@
 [submodule "git-remote-hg"]
 	path = git-remote-hg
 	url = git@github.com:fingolfin/git-remote-hg.git
+[submodule "vim/bundle/greplace"]
+	path = vim/bundle/greplace
+	url = https://github.com/vim-scripts/greplace.vim.git
