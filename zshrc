@@ -158,3 +158,9 @@ check_virtualenv
 alias cd="venv_cd"
  
 # also, for fun, add something like `pyfiglet "env : $1"` to ~/.virtualenv/preactivate
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/vlad/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/vlad/google-cloud-sdk/completion.zsh.inc'
