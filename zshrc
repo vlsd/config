@@ -69,7 +69,7 @@ else
     eval PATH="~/bin:"$PATH
 fi
 
-plugins=(git git-extras cp rsync $distro python lol wakeonlan screen) 
+plugins=(git git-extras cp rsync $distro python lol wakeonlan tmux) 
 
 source $ZSH/oh-my-zsh.sh
 
